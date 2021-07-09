@@ -115,46 +115,48 @@ def find_pet_by_name(pet_shop_dic, search_name):
 #             search_results.append(pets)
 #     return search_results
 
-def remove_pet_by_name(pet_shop_dic, remove_name):
-    for pet in pet_shop_dic["pets"]:
-        if pet["name"] == remove_name:
-            pet_shop_dic["pets"].remove(pet)
+# def remove_pet_by_name(pet_shop_dic, remove_name):
+#     for pet in pet_shop_dic["pets"]:
+#         if pet["name"] == remove_name:
+#             pet_shop_dic["pets"].remove(pet)
 
 def add_pet_to_stock(pet_shop_dic, new_pet):
     pet_shop_dic["pets"].append(new_pet)
 
-def get_customer_cash(customer_list):
-    return customer_list["cash"]
+print(pet_shop_dic["pets"])
 
-def remove_customer_cash(customer_list, cash_bal):
-    customer_cash_new = customer_list["cash"] - cash_bal
-    customer_list["cash"] = customer_cash_new
-    return customer_cash_new
+# def get_customer_cash(customer_list):
+#     return customer_list["cash"]
 
-def get_customer_pet_count(customer_list):
-    return len(customer_list["pets"])
+# def remove_customer_cash(customer_list, cash_bal):
+#     customer_cash_new = customer_list["cash"] - cash_bal
+#     customer_list["cash"] = customer_cash_new
+#     return customer_cash_new
 
-def add_pet_to_customer(customer_list, new_pet):
-    customer_list["pets"].append(new_pet)
-    return customer_list["pets"]
+# def get_customer_pet_count(customer_list):
+#     return len(customer_list["pets"])
 
-def customer_can_afford_pet(customer_list, new_pet):
-    if customer_list["cash"] >= new_pet["price"]:
-        return True
-    else: return False
+# def add_pet_to_customer(customer_list, new_pet):
+#     customer_list["pets"].append(new_pet)
+#     return customer_list["pets"]
 
-customer = customer_list[0]
-pet = find_pet_by_name(pet_shop_dic,"Dave")
-def sell_pet_to_customer(pet_shop_dic, pet, customer_list):
-    if find_pet_by_name(pet_shop_dic, "Dave") == None:
-        break
-    else:
-        add_pet_to_customer(customer_list, pet)
+# def customer_can_afford_pet(customer_list, new_pet):
+#     if customer_list["cash"] >= new_pet["price"]:
+#         return True
+#     else: return False
 
-        pets_sold = 1
-        increase_pets_sold(pet_shop_dic, pets_sold)
+# customer = customer_list[0]
+# pet = find_pet_by_name(pet_shop_dic,"Dave")
+# def sell_pet_to_customer(pet_shop_dic, pet, customer_list):
+#     if find_pet_by_name(pet_shop_dic, "Dave") == None:
+#         break
+#     else:
+#         add_pet_to_customer(customer_list, pet)
 
-        cash_diff = pet["price"]
-        remove_customer_cash(customer_list, cash_diff)
-        add_or_remove_cash(pet_shop_dic, cash_diff)
+#         pets_sold = 1
+#         increase_pets_sold(pet_shop_dic, pets_sold)
+
+#         cash_diff = pet["price"]
+#         remove_customer_cash(customer_list, cash_diff)
+#         add_or_remove_cash(pet_shop_dic, cash_diff)
 
